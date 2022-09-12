@@ -3,7 +3,8 @@ The module to make Knight moves on the Chess board till all cells are covered an
 
 The entities:
 - board: an array NxN (by_default ) 
-- init_post: the initial position and logic of movement
+- init_pos: the initial position
+- logic of movement
 - Chess_game: the main class, defined by the board size and the initial position of the Knight
 - move_otion: 8 ways to change the position according to the game rules.
 """

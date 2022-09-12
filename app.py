@@ -16,6 +16,7 @@ all_chars = list(string.ascii_lowercase)
 game_ij = knight.Chess_game([0,0])
 
 app = Flask(__name__)
+#put your connect to the database.
 app.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql://postgres:flask@localhost/sergey'
 app.config["SQLALCHEMY_TRACK_MODIFICATIONS"] = False
 db = SQLAlchemy(app)
@@ -66,7 +67,6 @@ def index():
                 game_ij.move_count = knight.knight_trip(game_ij,knight.make_move_reg)
                 optim = "off"
             
-            print(all_chars[game_ij.init_pos[1]] + str(game_ij.init_pos[0]+1))
 
             new_trip = Trips(game_ij.init_pos,optim,game_ij.move_count,datetime.now())
             db.session.add(new_trip)
