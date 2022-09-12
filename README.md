@@ -16,12 +16,6 @@ The entities I have to deal with are:
 - board: an array NxN (by_default 8, could be set as a static constant) 
 - inititial position: the initial position of the Knight
 - move otion: 8 ways to change the position according to the game rules.
-    00x0x00
-    0x000x0
-    000K000
-    0x000x0
-    00x0x00
-
 - real move: if the Knight stands near the borders - the move options are limited, as we can not go outside the board
 
 - The move logic: there are 2 methods for making the move: 
