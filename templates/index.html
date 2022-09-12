@@ -1,0 +1,42 @@
+{% extends 'base.html' %}
+
+{% block head %}
+<title> Knight trip on the board </title>
+{% endblock %}
+
+{% block body %}
+<div class="content">
+    <h1 style="text-align: center">The Board</h1>
+    <label>Knight start position</label><br>
+    <table>
+        {% for row in range(b_size,0,-1) %}
+        <tr>
+            <th>{{row}}</th>
+            {% for col in range(1,b_size+1) %}
+            <td>
+                <a href="/select/{{row}}/{{col}}">{{board[row-1,col-1]}}</a>
+            </td>
+            {% endfor %}
+        </tr>
+        {% endfor %}
+        <tr>
+            <th>-</th>
+            {% for char in board_chars %}
+                <th>{{char}}</th>
+            {% endfor %}
+        </tr>
+    </table>
+    <br>
+    <form action="/" method="POST">
+        <input type="checkbox" id="opt" name="opt" checked />
+        <label for="opt">Optimal moves</label><br>  
+        <input type="submit" value="Start the trip" /><br>
+    </form><br>
+
+    <label>Total moves in the trip: {{moves}}</label><br> 
+
+    <a href="/results">See the results</a>
+    
+</div>
+{% endblock %}
+

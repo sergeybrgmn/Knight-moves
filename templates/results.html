@@ -1,0 +1,36 @@
+{% extends 'base.html' %}
+
+{% block head %}
+<title> Knight trip on the board </title>
+{% endblock %}
+
+{% block body %}
+<div class="content">
+    <h1 style="text-align: center">Move results</h1>
+    <a href="/">Return to the game</a><br>
+    {% if trips|length < 1%}
+    <h4 style="text-align: center">There are no trips. Start the trip</h4>
+    <a href="/">To start to the game</a>
+    {% else%}
+    <table>
+        <tr>
+            <th>#</th>
+            <th>Initial cell</th>
+            <th>Optimization</th>
+            <th>Moves</th>
+            <th>Date</th>
+        </tr>
+        {% for trip in trips %}
+        <tr>
+            <th scope="row">{{ loop.index }}</th>
+            <td>{{ trip.init_cell }}</td>
+            <td>{{ trip.optim }}</td>
+            <td>{{ trip.moves }}</td>
+            <td>{{ trip.date_created }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+    {% endif %}
+    
+</div>
+{% endblock %}
