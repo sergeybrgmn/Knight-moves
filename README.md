@@ -19,9 +19,11 @@ The entities I have to deal with are:
 - real move: if the Knight stands near the borders - the move options are limited, as we can not go outside the board
 
 - The move logic: there are 2 methods for making the move: 
-    - Regular: when we choose a random move 
-    - Otimal: when we choose a random move but "try" not to step twice on the cell (we choose a new cell)
+    - Regular: when we choose a random move each time
+    - Otimal: when we choose a random move but "try" not to step twice on the cell (we try to choose a new cell)
 
 ## Next steps
 Deploy the app on the cloud. 
 Maybe practice with AWS/GCP
+
+Try to improve the move algorithm - make the each step not random, but use some common strategy to visit all the cells ASAP.
