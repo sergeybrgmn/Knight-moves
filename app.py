@@ -17,7 +17,8 @@ game_ij = knight.Chess_game([0,0])
 
 app = Flask(__name__)
 #put your connect to the database.
-app.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql://postgres:flask@localhost/sergey'
+#app.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql://postgres:flask@localhost/sergey'
+app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///moves.db'
 app.config["SQLALCHEMY_TRACK_MODIFICATIONS"] = False
 db = SQLAlchemy(app)
 
